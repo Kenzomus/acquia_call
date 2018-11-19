@@ -1,0 +1,44 @@
+operations:
+
+  getPosts:
+    httpMethod: "GET"
+    uri: "ISafetyInfo"
+   
+   summary: "get the ISafetyInfo."
+
+  parameters:
+    limit:
+      location: "query"
+      description: "the number of ISafetyInfo to be retrieved"
+      type: "integer"
+      require: true
+      default: 5
+    
+    sort:
+     
+      location: "query"
+      description: "the sorting order."
+     
+      type: "string"
+      requireed: true
+      default: "desc"
+    responseModel: "infoSafetyList"
+
+  models:
+  infoSafetyList:
+    type: "array"
+    location: "json"
+    items:
+      "$ref": "ISafetyInfo"
+
+  ISafetyInfo:
+    type: "object"
+    location: "json"
+    properties:
+      title:
+        location: "json"
+        type: "string"
+
+
+
+ 

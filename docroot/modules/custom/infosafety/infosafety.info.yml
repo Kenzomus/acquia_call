@@ -1,0 +1,5 @@
+name: infosafety
+description: "expose the important safety information thru endpoint"
+type: module
+core: 8.x
+package: "Information Safety API"

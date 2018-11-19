@@ -1,0 +1,6 @@
+name: " content services APi"
+apiVersion: "1.0"
+description: "client wrapper for the ContentServices API."
+imports:
+  - "resources/infosafety.yml"
+

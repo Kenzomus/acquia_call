@@ -1,0 +1,5 @@
+name: acquia_api
+description: "make api call to acquia site factory to backup and delete the sites with expired in the group"
+type: module
+core: 8.x
+package: Acquia Api
