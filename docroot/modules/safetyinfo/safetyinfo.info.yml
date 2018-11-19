@@ -1,0 +1,4 @@
+name: safetyinfo
+type: module
+core: 8.x
+description: 'create content type safety information with paragraph'
