@@ -1,0 +1,6 @@
+name: Custom Http Client
+type: module
+description: A custom HTTP client
+core: 8.x
+package: SiteFactoryApiClient
+
