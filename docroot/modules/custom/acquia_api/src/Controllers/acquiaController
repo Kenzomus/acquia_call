@@ -8,7 +8,7 @@
 
   //"https://www.dev-otsuka.acsitefactory.com/api/v1/sites?limit=20&page=2' \-v -u {user_name}:{api_key}&filter[name][condition][path]=groups"
 
-  $end_point = https:///www.dev-otsuka.acsitefactory.com/api/v1/groups?page=2&limit=20'&filter[name][condition][path]=group_name&filter[title][condition][operator]=CONTAINS&filter[title][condition][value]=Expired&_format=json
+  $end_point = https:///www.dev-otsuka.acsitefactory.com/api/v1/groups?page=2&limit=20'&filter[group_name][condition][path]=group_name&filter[title][condition][operator]=CONTAINS&filter[title][condition][value]=Expired&_format=json
   
   // maybe collect the parameters in a more elegant way
      
@@ -40,7 +40,7 @@
 
   }
 
-  function get_bkup_url($site_id){
+  function get_bkup_url($site_id,backup_id ){
     // pass it the site id
      //call the function backup_url()
      $backup_endpoint_url = "GET /api/v1/sites/{site_id}/backups/{backup_id}/url"
