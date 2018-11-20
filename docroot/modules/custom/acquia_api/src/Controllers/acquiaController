@@ -4,6 +4,11 @@
  * get groups that contains "expired"
  */
 
+namespace Drupal\acquia_api\Controller;
+ 
+use Drupal\Core\Controller\ControllerBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+//use Drupal\my_api_client\MyClient;
  function get_group (){
 
   //"https://www.dev-otsuka.acsitefactory.com/api/v1/sites?limit=20&page=2' \-v -u {user_name}:{api_key}&filter[name][condition][path]=groups"
