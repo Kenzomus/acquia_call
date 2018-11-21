@@ -3,11 +3,12 @@
    * GuzzleHttp\Client definition.
    *
    * @var GuzzleHttp\Client
+   *
+   * protected $custom_http_client_client;
    */
-  protected $custom_http_client_client;
-  public function __construct(
-      Client $custom_http_client_client
-    ) {
+
+  public function __construct( Client $custom_http_client_client) 
+   {
     parent::__construct();
         $this->custom_http_client_client = $custom_http_client_client;
   }
