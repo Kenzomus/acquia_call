@@ -1,0 +1,4 @@
+administer custom_http_client:
+  title: 'custom_http_client:'
+  description: 'Allow administration to run custom_http_client it'
+  restrict access: true
