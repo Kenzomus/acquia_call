@@ -1,6 +1,6 @@
 operations:
 
-  getPosts:
+  getISafetyInfo:
     httpMethod: "GET"
     uri: "ISafetyInfo"
    

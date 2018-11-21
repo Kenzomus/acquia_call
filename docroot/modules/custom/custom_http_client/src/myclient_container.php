@@ -1,11 +1,12 @@
-</php
-**
+<?php
+   /** 
    * GuzzleHttp\Client definition.
    *
    * @var GuzzleHttp\Client
    *
    * protected $custom_http_client_client;
    */
+
 
   public function __construct( Client $custom_http_client_client) 
    {
@@ -17,4 +18,5 @@
     return new static(
       $container->get('custom_http_client.client')
     );
+  
   }
