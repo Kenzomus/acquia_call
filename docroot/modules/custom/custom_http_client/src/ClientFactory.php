@@ -11,7 +11,7 @@ class ClientFactory {
     */
     public function get(){
        $config = [
-           'base_uri' => 'https://example.com',
+           'base_uri' => 'https://www.dev-otsuka.acsitefactory.com//api/v1/',
        ];
 
        $client = new Client($config);
