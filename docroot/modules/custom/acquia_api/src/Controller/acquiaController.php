@@ -1,5 +1,5 @@
 <?php
-namespace Drupal\acquia_api\Controllers;
+namespace Drupal\acquia_api\Controller;
 
 /**
  * get groups that contains "expired"
@@ -7,25 +7,35 @@ namespace Drupal\acquia_api\Controllers;
 
 
  
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 //use Drupal\my_api_client\MyClient;
 
- acquiaController extends ControllerBase;
+class  acquiaController extends ControllerBase {
 
- function get_group (){
+public function testMethod(){
 
-  $client = \Drupal::httpClient();
+       $client = \Drupal::httpClient();
 
   try {
-    $response = $client->get('https:///www.dev-otsuka.acsitefactory.com/api/v1/groups');
+    $response = $client->get('http://importantsafetyghuqazsgzf.devcloud.acquia-sites.com/jsonapi/node/ISafetyInfo');
+
     $data = $response->getBody();
-    return $data;
+    $responseCode = $response->getStatusCode();
+
+   // return new Response($data);
+   return new Response($responseCode );
   }
-  
+
   catch (RequestException $e) {
     watchdog_exception('acquia_api', $e->getMessage());
-  }
+
+
+}
+
+ 
 
   //"https://www.dev-otsuka.acsitefactory.com/api/v1/sites?limit=20&page=2' \-v -u {user_name}:{api_key}&filter[name][condition][path]=groups"
 
@@ -42,8 +52,8 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
         
- }
-  public function get_site (group_list[]) {
+ 
+  public function get_site (group_list) {
     
       // get the site if group id is in array
       // loop thru the array 
@@ -77,7 +87,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
       'label' => $site->site . ' ' . date('m-d-Y g:i')
     );
 
-}
+  }
    public function delete_sites_already_backup($site_id){
          //get the id
          //delete the site
@@ -88,3 +98,4 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 
 
     }
+  }
