@@ -1,0 +1,3 @@
+services:
+  my_acquia_call:
+    class: Drupal\acquia_api\my_acquia_calls 

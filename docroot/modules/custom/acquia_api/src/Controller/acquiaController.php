@@ -21,10 +21,13 @@ public function testMethod(){
     $response = $client->get('http://importantsafetyghuqazsgzf.devcloud.acquia-sites.com/jsonapi/node/ISafetyInfo');
     
     $data = $response->getBody();
-    $responseCode = $response->getStatusCode();
+   // $responseCode = $response->getStatusCode();
+    $myarray= json_decode($data);
 
    // return new Response($data);
-   return new Response($responseCode );
+  // return new Response($responseCode );
+
+     return new Response(var_dump($myarray));
   }
 
   catch (RequestException $e) {
