@@ -1,0 +1,53 @@
+<?php
+/**
+ * Implements hook_schema().
+ *
+ */
+function acquia_api_schema() {
+  $schema['acquia_api'] = array(
+    'description' => 'Stores site_name,backup_url timestamp, and uid f',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The primary identifier for the record.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uid' => array(
+        'description' => 'The {users}.uid that run the acquia_api_call.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      
+      'site_name' => array(
+        'description' => 'site name.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'bkup_url' => array(
+        'description' => 'site name.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => FALSE,
+        'default' => '',
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'Timestamp for whenacquia_api  was run.',
+      ),
+    ),
+    'primary key' => array('id'),
+    'indexes' => array(
+      'node' => array('nid'),
+      'node_user' => array('nid', 'uid'),
+    ),
+  );
+ 
+  return $schema;
+}
+
