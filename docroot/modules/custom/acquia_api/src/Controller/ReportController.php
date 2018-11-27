@@ -22,7 +22,7 @@ class ReportController extends ControllerBase {
     $select = Database::getConnection()->select('acquia_api', 'r');
       // Join the users table, so we can get the entry creator's username.
     $select->join('users_field_data', 'u', 'r.uid = u.uid');
-      // Join the node table, so we can get the event's name.
+      
     $select->join()
     // Select these specific fields for the output.
     $select->addField('u', 'name', 'username');
