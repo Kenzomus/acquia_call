@@ -5,3 +5,11 @@ group_list:
     _title: 'Groups with expired title'
   requirements:
     _permission: 'access content'
+
+AcquiaApiForm.form:
+  path: '/AcquiaAp'
+  defaults:
+    _form: '\Drupal\acquia_api\Form\AcquiaApiForm'
+    _title: 'Delete old sites'
+  requirements:
+    _permission: 'access content'
