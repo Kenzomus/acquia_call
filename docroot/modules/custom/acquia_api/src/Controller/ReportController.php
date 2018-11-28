@@ -37,7 +37,7 @@ class ReportController extends ControllerBase {
     // Select these specific fields for the output.
     $select->addField('u', 'name', 'username');
    // $select->addField('n', 'title');
-   // $select->addField('r', 'mail');
+    $select->addField('r', 'created');
     $entries = $select->execute()->fetchAll(\PDO::FETCH_ASSOC);
     return $entries;
   }
@@ -51,6 +51,7 @@ class ReportController extends ControllerBase {
       t('Name'),
       t('site_name'),
       t('site_bkup_url'),
+      t('created'),
     );
     $rows = array();
     foreach ($entries = $this->load() as $entry) {
