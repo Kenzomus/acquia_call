@@ -43,7 +43,7 @@ function acquia_api_schema() {
     ),
     'primary key' => array('id'),
     
-    ),
+    
   );
  
   return $schema;
