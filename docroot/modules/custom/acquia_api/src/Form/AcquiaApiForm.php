@@ -70,17 +70,17 @@ class AcquiaApiForm extends FormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-   
-   
-   
+      
      db_insert('acquia_api')
       ->fields(array(
        
         
        'uid' => $user->id(),
        'created' => time(),
+
        ))
       ->execute();
   //  drupal_set_message(t('Thank you '));
   }
 }
+
