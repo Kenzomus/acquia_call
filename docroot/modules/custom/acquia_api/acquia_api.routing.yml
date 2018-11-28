@@ -6,10 +6,20 @@ group_list:
   requirements:
     _permission: 'access content'
 
+
+
 AcquiaApiForm.form:
-  path: '/AcquiaAp'
+  path: '/AcquiaApi'
   defaults:
     _form: '\Drupal\acquia_api\Form\AcquiaApiForm'
-    _title: 'Delete old sites'
+    _title: 'Delete old sitest'
   requirements:
     _permission: 'access content'
+acquia_api.report:
+  path: '/admin/reports/acquia_api'
+  defaults:
+    _controller: '\Drupal\acquia_api\Controller\ReportController::report'
+    _title: 'List of sites deleted and backup'
+  requirements:
+    _permission: 'access content'
+

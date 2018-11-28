@@ -1,0 +1,6 @@
+cquia_api.report:
+  title: 'List of sites deleted'
+  description: 'View backup and sites deleted'
+  route_name: acquia_api.report
+  parent: system.admin_reports
+  weight: 0

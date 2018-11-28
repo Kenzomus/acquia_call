@@ -1,5 +1,5 @@
 <?php
-<?php
+
 /**
  * @file
  * Contains \Drupal\acquia_api\Form\AcquiaApiForm
