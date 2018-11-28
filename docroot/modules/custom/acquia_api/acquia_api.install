@@ -41,13 +41,12 @@ function acquia_api_schema() {
         'description' => 'Timestamp for whenacquia_api  was run.',
       ),
     ),
-    'primary key' => array('id'),
-    'indexes' => array(
-      'node' => array('nid'),
-      'node_user' => array('nid', 'uid'),
-    ),
+    'primary key' => array('id')
+    
+    
   );
  
   return $schema;
 }
+
 
