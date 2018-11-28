@@ -36,7 +36,8 @@ class ReportController extends ControllerBase {
 
     // Select these specific fields for the output.
     $select->addField('u', 'name', 'username');
-   // $select->addField('n', 'title');
+    $select->addField('r', 'site_name');
+    $select->addField('r', 'bkup_url');
     $select->addField('r', 'created');
     $entries = $select->execute()->fetchAll(\PDO::FETCH_ASSOC);
     return $entries;
