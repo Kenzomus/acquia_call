@@ -11,7 +11,7 @@ group_list:
 AcquiaApiForm.form:
   path: '/AcquiaApi'
   defaults:
-    _form: '\Drupal\acquia_api\Form\AcquiaApiForm'
+    _form: '\Drupal\acquia_api\Form\AcquiaApiFormService'
     _title: 'Delete old sitest'
   requirements:
     _permission: 'access content'
