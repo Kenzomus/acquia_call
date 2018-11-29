@@ -15,7 +15,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 /**
  * Provides a form to get the usr-name,password api key to send to acquia.
  */
-class AcquiaApiForm extends FormBase {
+class AcquiaApiFormService extends FormBase {
 
   /**
    * {@inheritdoc}
