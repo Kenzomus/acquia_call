@@ -21,7 +21,7 @@ class AcquiaApiFormService extends FormBase {
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'acqui_api_form';
+    return 'acqui_api_formService';
   }
 /**
    * {@inheritdoc}
@@ -91,6 +91,7 @@ class AcquiaApiFormService extends FormBase {
      // $myarray['title']= $mydata->title;
 
       return new Response($mydata);
+      foreach ($datas in $data){
       $title = $mydata->title;
      db_insert('acquia_api')
       ->fields(array(
@@ -102,7 +103,8 @@ class AcquiaApiFormService extends FormBase {
 
        ))
       ->execute();
-  //  drupal_set_message(t('Thank you '));
+      } 
+   drupal_set_message(t('Thank you '));
   }
 }
 
