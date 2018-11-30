@@ -50,8 +50,8 @@ class ReportController extends ControllerBase {
     );
     $headers = array(
       t('Name'),
-      t('site_name'),
-      t('site_bkup_url'),
+      t('site'),
+      t('backup url'),
       t('created'),
     );
     $rows = array();

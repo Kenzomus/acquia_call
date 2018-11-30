@@ -3,6 +3,8 @@
 namespace Drupal\acquia_api;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Database\Database;
+use Guzzle\Http\Client;
 
 class my_acquia_calls {
 
@@ -11,13 +13,14 @@ class my_acquia_calls {
 public function get_group(){
 
        $client = \Drupal::httpClient();
-
+  
+       // $client = new Client();
   try {
     $response = $client->get('http://importantsafetyghuqazsgzf.devcloud.acquia-sites.com/jsonapi/node/ISafetyInfo');
-
+   // $response = $client->send();
     $data = $response->getBody();
-    $responseCode = $response->getStatusCode();
-   $myarray= json_decode($data);
+   // $responseCode = $response->getStatusCode();
+    // $myarray= json_decode($data);
      
   //  $mydata = $response->json();
    return new Response($data);
@@ -50,7 +53,7 @@ public function backup_site ($site_id){
    // $backup_endpoint = " https://www.dev-otsuka.acsitefactory.com/api/v1/sites/{site_id}/backup "
 
     // get the $backup_id
-
+drupal_set_message(t('Thank your site has been  backed up '));
   }
 public function get_bkup_url($site_id,$backup_id ){
     // pass it the site id
@@ -68,19 +71,29 @@ public function delete_sites_already_backup($site_id){
       // $delete_endpoint=  https://www.dev-otsuka.acsitefactory.com/api/v1/sites/{site_id} \
    // -X DELETE -v -u {user_name}:{api_key}
 
-
+drupal_set_message(t('Thank you. Sites deleted '));
 
     }
 
 
 
+public function sites_list($uid,$site_name,$bkup_url){
+
+     db_insert('acquia_api')
+      ->fields(array( 
+       'uid' => $uid(),
+       'site_name' =>$site_name,
+       'bkup_url'=>$bkup_url,
+       'created' => time(),
+
+       ))
+      ->execute();
 
 
 
+drupal_set_message(t('Thank you .records inserted '));
 
-
-
-
+}
 
 
 
