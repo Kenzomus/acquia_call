@@ -1,0 +1,7 @@
+export_json.data:
+  path: '/export'
+  defaults:
+    _controller: '\Drupal\infosafety\Controller\ISafetyInfoController::data'
+    _title: 'Export Safety information'
+  requirements:
+    _permission: 'access content'

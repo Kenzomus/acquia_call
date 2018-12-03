@@ -102,7 +102,7 @@ public function __construct($my_api){
        
    
      $result =$mydata ;
-    // $result =json::decode($mydata);
+    // $result =json_decode($mydata);
     
     // loop thru the response to get the $group_id , $site_name, $site_id
 
@@ -113,7 +113,8 @@ public function __construct($my_api){
             foreach ($result as $result){
                $site_name = $result->title;
                $uid = $user->id();
-               $bkup_url=$result->nid;
+               $bkup_url = $result->title;
+               
 
          // call the backup function, provide it the $site_id
  
@@ -138,9 +139,9 @@ public function __construct($my_api){
                   ->execute();
 
     //$this->my_api->backup_site ($site_id);   
-     drupal_set_message(t('Thank you. '.$site_name." ".$bkup_url." "."you can view the sites backed up and deleted /admin/report "));  
-  
-
+     drupal_set_message(t('Thank you. '.$site_name." ".$bkup_url." "."you can view the sites backed up and deleted below  "));  
+      // $form_state['redirect']= '/admin/reports/acquia_api';  
+         $form_state->setRedirect('acquia_api.report');
             }
 
        }
