@@ -20,13 +20,13 @@ public function get_group(){
    // $response = $client->send();
     $data = $response->getBody();
    // $responseCode = $response->getStatusCode();
-    // $myarray= json_decode($data);
+    
      
-  //  $mydata = $response->json();
+  
    return new Response($data);
-   //return new Response($responseCode );
-  // return new Response(var_dump($myarray));
-    // return new Response($myarray);
+   
+  
+    
   }
 
   catch (RequestException $e) {
@@ -95,6 +95,10 @@ drupal_set_message(t('Thank you .records inserted '));
 
 }
 
-
-
+public function request($method, $endpoint, $query) {
+          $client = \Drupal::httpClient();
+        
+  $response = $client->{$method}($endpoint,$query);
+   // $response = $client->send();
+}
 }
