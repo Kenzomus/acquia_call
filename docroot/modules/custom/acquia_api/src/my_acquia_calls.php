@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Database\Database;
 use Guzzle\Http\Client;
-
+use Drupal\Component\Serialization\Json;
 class my_acquia_calls {
 
 
@@ -18,7 +18,7 @@ public function get_group(){
   try {
     $response = $client->get('http://importantsafetyghuqazsgzf.devcloud.acquia-sites.com/jsonapi/node/ISafetyInfo');
    // $response = $client->send();
-    $data = $response->getBody();
+    $data =$response->getBody();
    // $responseCode = $response->getStatusCode();
     
      

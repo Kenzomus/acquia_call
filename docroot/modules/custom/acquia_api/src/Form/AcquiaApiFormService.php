@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Session\AccountInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
-
+use Drupal\Component\Serialization\Json;
 /**
  * Provides a form to get the usr-name,password api key to send to acquia.
  */
@@ -95,8 +95,11 @@ public function __construct($my_api){
       // get the user id.
 
     $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
-    
+   
+
+ // get the form input name, password, api_key to append to the request query
       // make the request to get the group with filter .
+   
  
     $mydata =  $this->my_api->get_group();
      
@@ -110,8 +113,8 @@ public function __construct($my_api){
    // $body = json_encode($body);
    //  $mydata = $this->my_api->request($method, $endpoint, $query);  
    
-     $result =$mydata ;
-    // $result =json_decode($mydata);
+   //  $result =Json::decode($mydata) ;
+     $result =$mydata;
     
     // loop thru the response to get the $group_id , $site_name, $site_id
 
@@ -119,13 +122,15 @@ public function __construct($my_api){
     if(!empty($result))
     
       {   
+           // get $site_id
+
             foreach ($result as $result){
                $site_name = $result->title;
                $uid = $user->id();
                $bkup_url = $result->title;
           // $site_name = $result['title'];
               // $uid = $user->id();
-              // $bkup_url = $result['title'];
+              // $site_id = $result-.id;
                
 
          // call the backup function, provide it the $site_id

@@ -26,6 +26,8 @@ class ISafetyInfoController extends ControllerBase {
         'attributes' => array(
           'title' =>  $node->get('title')->value,
           'content' => $node->get('body')->value,
+          
+          
         ),
       );
     }
