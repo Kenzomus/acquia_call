@@ -28,7 +28,7 @@ function acquia_api_schema() {
         'default' => '',
       ),
       'bkup_url' => array(
-        'description' => 'site name.',
+        'description' => 'backup url of the site.',
         'type' => 'varchar',
         'length' => 64,
         'not null' => FALSE,

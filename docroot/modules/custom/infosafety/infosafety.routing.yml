@@ -4,4 +4,4 @@ export_json.data:
     _controller: '\Drupal\infosafety\Controller\ISafetyInfoController::data'
     _title: 'Export Safety information'
   requirements:
-    _permission: 'admin'
+    _permission: 'access content'

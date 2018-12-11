@@ -27,7 +27,7 @@ public function __construct($my_api){
 
 public function test2Method(){
 
-     //get the group list with expired.
+     //get the group list with expired in the group_name.
 
      $mydata =  $this->my_api->get_group();
        
@@ -38,7 +38,7 @@ public function test2Method(){
        return new Response($mydata);
        
 
-    // loop thru to  get the group id, to pass to get_site()
+    // loop thru to  get the group id, to pass it  to get_site()
     
     // $mysite =  $this->my_api->get_site($group_id);
    
